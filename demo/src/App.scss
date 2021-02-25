@@ -1,0 +1,78 @@
+.App {
+  text-align: center;
+  margin: 0 auto;
+  width: 1024px;
+  height: 768px;
+  background-color: #e1e1e1;
+  padding: 25px 50px;
+
+  main {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+    section {
+      margin: 2px 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      div {
+        display: flex;
+
+        button {
+          background-color: #223D72;
+          color: #fff;
+          height: 1.75em;
+          padding: .85em 1.25em;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-radius: 3px;
+          border: none;
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+
+
+  .display {
+    .showValue {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      .title {
+        margin: 0 !important;
+      }
+    }
+
+    .dValue {
+      font-size: 15em;
+      margin: 0;
+    }
+  }
+
+  .range {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
+    border: 35px solid #cecece;
+    border-radius: 500px;
+
+    div {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 45px;
+    }
+  }
+
+  .widget {
+    display: flex;
+    align-items: top;
+  }
+}
