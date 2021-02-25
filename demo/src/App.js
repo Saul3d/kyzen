@@ -5,7 +5,7 @@ import RangeWidget from './Components/RangeWidget/RangeWidget';
 
 import './App.scss';
 
-const App = (props) => {
+const App = props => {
   const [ dataState, setDataState ] = useState({
     data: [
       {
@@ -23,28 +23,32 @@ const App = (props) => {
     ]
   });
 
+  const changeTempValue = (newTemp) => {
+    setDataState({
+      data: [
+        {
+          Conc: 15,
+          Temp: newTemp,
+          TempLimit: {
+            Upper: 75,
+            Lower: 35
+          },
+          ConcLimit: {
+            Upper: 20,
+            Lower: 10
+          }
+        }
+      ]
+    })
+  }
   const convertToCelciusHandler = () => {
-    // setDataState({
-    //   data: [
-    //     {
-    //       Conc: 15,
-    //       Temp: 3.33,
-    //       TempLimit: {
-    //         Upper: 75,
-    //         Lower: 35
-    //       },
-    //       ConcLimit: {
-    //         Upper: 20,
-    //         Lower: 10
-    //       }
-    //     }
-    //   ]
-    // });
-  //   console.log('Celcius');
+    let convertedTemp = ((dataState.data[0].Temp - 32) /1.8).toFixed(2);
+    changeTempValue(convertedTemp);
   }
 
   const convertToFehrenhietHandler = () => {
-    console.log('Fahrenhiet')
+    let convertedTemp = ((dataState.data[0].Temp * 1.8) + 32).toFixed(0);
+    changeTempValue(convertedTemp);
   }
 
   return (
@@ -65,7 +69,7 @@ const App = (props) => {
           <div className="display">
             <DisplayValue currentValue={dataState.data[ 0 ].Temp}>Temperature</DisplayValue>
             <button
-              onClick={convertToCelciusHandler()}
+              onClick={convertToCelciusHandler}
             >Celcius</button>
             <button
               onClick={convertToFehrenhietHandler}
