@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import DisplayValue from './Components/DisplayValue/DisplayValue';
 import RangeWidget from './Components/RangeWidget/RangeWidget';
 
+import Keyboard from 'react-simple-keyboard';
+
+import 'simple-keyboard/build/css/index.css';
 import './App.scss';
 
 const App = props => {
@@ -51,6 +54,13 @@ const App = props => {
     changeTempValue(convertedTemp);
   }
 
+  const onChange = (input) => {
+    console.log("Input changed", input);
+  }
+
+  const onKeyPress = (button) => {
+    console.log("Button pressed", button);
+  }
   return (
     <div className="App">
       <main>
@@ -85,6 +95,11 @@ const App = props => {
         </section>
 
       </main>
+      <Keyboard
+        onChange={onChange}
+        onKeyPress={onKeyPress}
+      />
+      <div className="overlay"></div>
     </div>
   );
 }
