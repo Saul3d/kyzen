@@ -5,6 +5,7 @@
   height: 768px;
   background-color: #e1e1e1;
   padding: 25px 50px;
+  position: relative;
 
   main {
     display: flex;
@@ -74,5 +75,24 @@
   .widget {
     display: flex;
     align-items: top;
+  }
+
+  .hg-theme-default {
+    visibility: visible !important;
+    position: relative;
+    bottom: 160px;
+    top: -1000px;
+    z-index: 20;
+  }
+
+  .overlay {
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display:none;
   }
 }
